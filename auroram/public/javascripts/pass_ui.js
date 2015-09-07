@@ -123,6 +123,11 @@ function refresh_events_lists(){
 
 
 $("#toRight_btn").click(function(){
+	//valida que no este selccionado algo en el otro lado
+	if(right_list.length>0){
+		tmp_list =right_list_tmp.concat(right_list);
+		right_list_tmp = tmp_list;
+	}
 	if(left_list.length>0){
 		//console.log("Subir archivos a stratus");
 		tmp_list = right_list_tmp.concat(left_list);
@@ -145,6 +150,12 @@ $("#toRight_btn").click(function(){
 });
 
 $("#toLeft_btn").click(function(){
+	//valida que no este selccionado algo en el otro lado
+	if(left_list.length>0){
+		tmp_list =left_list_tmp.concat(left_list);
+		left_list_tmp = tmp_list;
+	}
+
 	if(right_list.length>0)
 	{//console.log("Subir archivos a stratus");
 		tmp_list = left_list_tmp.concat(right_list);
@@ -162,4 +173,5 @@ $("#toLeft_btn").click(function(){
 		console.log("left_list_tmp: ",left_list_tmp);
 		console.log("left_list: "+left_list);
 	}
+
 });
