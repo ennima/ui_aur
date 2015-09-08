@@ -1,0 +1,186 @@
+dark-color = #3a3
+light-color = #eee
+higlight-color = #9a9
+buttons-color = #9c9
+buttons-text = #333
+selected-color = #333
+selected-text = #fff
+smallerWidth = 600px
+normalWidth = 1024px
+
+box-height = 600px
+
+
+normalToLarge = "screen and (min-width: "+normalWidth+")"
+smallerToNormal = "screen and (max-width: "+smallerWidth+")"
+body
+  padding: 50px
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  background-color: #000
+a
+  color: #00B7FF
+
+.container
+	background:dark-color
+	width:100%
+	height: auto
+	overflow: hidden
+	@media normalToLarge
+		width:80%
+		margin-left:10%
+
+.container .left_list
+	background:light-color
+	width:35%
+	height: box-height
+	float:left
+	margin-left:1em
+	margin-top:1em
+	margin-bottom:1em;
+	border-style: solid
+	border-width: 2px
+	border-color: dark-color
+	overflow-y: scroll
+	overflow-x: hidden
+	scrollbar-3dlight-color:buttons-color
+	scrollbar-arrow-color:buttons-text
+	scrollbar-base-color:buttons-color-color
+	scrollbar-darkshadow-color:buttons-color
+	scrollbar-face-color:buttons-color
+	scrollbar-highlight-color:scrollbar-darkshadow-color
+	
+
+    
+	@media smallerToNormal
+		width:98%
+		margin-left:0
+		margin-top:0px
+		margin-bottom: 0px
+		padding-left:1%
+.container .left_list .list_item:hover, , .container .right_list .list_item:hover
+	background:buttons-color
+
+.container .left_list .list_item_selected, .container .right_list .list_item_selected
+	width:95%
+	background:selected-color
+	color:selected-text
+	font-weight:bold
+	padding-left:1em
+	height:auto
+	margin:0px
+	overflow:hidden
+	cursor:pointer
+
+.container .left_list .list_item, .container .right_list .list_item
+	padding-left:0.4em
+	width:97%
+	overflow:hidden
+	cursor:pointer
+
+
+
+.container .buttons
+	width:9%
+	height: box-height
+	float:left
+	margin-top: 1em
+	margin-left:8%
+	border-style: solid
+	border-width: 2px
+	border-color: dark-color
+	@media smallerToNormal
+		height:3em
+		width:98%
+		margin-left:0px
+		margin-top:0px
+		padding-left:1%
+
+.container .buttons a
+	background: buttons-color
+	width:100%
+	height:30%
+	float:left
+	margin-top: 45%
+	text-align:center
+	text-decoration: none
+	@media smallerToNormal
+		width:48%
+		height:100%
+		margin:0px
+		padding:0px
+
+.container .buttons a:hover
+	background:higlight-color
+
+.container .buttons a span
+	color:buttons-text
+	font-weight:bold
+	font-size: 3em
+	margin-top:50%
+	position:relative
+	top:10px
+	@media smallerToNormal
+		margin-top:1%
+		top:0px
+
+
+
+.container .right_list
+	background:light-color
+	width:35%
+	height: box-height
+	float:right
+	margin-right:1em
+	margin-top:1em
+	border-style: solid
+	border-width: 2px
+	border-color: dark-color
+	overflow-y: scroll
+	overflow-x: hidden
+	scrollbar-3dlight-color:buttons-color
+	scrollbar-arrow-color:buttons-text
+	scrollbar-base-color:buttons-color-color
+	scrollbar-darkshadow-color:buttons-color
+	scrollbar-face-color:buttons-color
+	scrollbar-highlight-color:scrollbar-darkshadow-color
+	
+	@media smallerToNormal
+		width:98%
+		margin-right:0px
+		margin-top:0px
+		padding-left:1%
+		
+
+.container_footer
+	background:selected-color
+	width:100%
+	height: auto
+	overflow: hidden
+	@media normalToLarge
+		width:80%
+		margin-left:10%
+
+.container_footer .status
+	width:80%
+	float:left
+
+.container_footer .button
+	background:buttons-color
+	width:20%
+	float:right
+	text-align: center
+
+.container_footer .button a
+	color:buttons-text
+	text-decoration:none
+	font-size:1.5em
+.container_footer .button a:hover, .container_footer .button:hover
+	color:light-color
+	background:higlight-color
+
+
+
+.spinner
+	margin: 100px auto 0;
+	width: 70px;
+	text-align: center;

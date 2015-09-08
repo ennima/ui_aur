@@ -1,0 +1,34 @@
+extends layout
+
+block content
+	h1= title
+	p User: #{user}
+	div(class='container')
+		div(class='left_list')
+			div(class='list_item')
+				p NOMBRE DEL FICHERO AURORA_260914
+		div(class='buttons')
+			a(href="#" id="toRight_btn") 
+				span >
+			a(href="#" id="toLeft_btn") 
+				span <
+		div(class='right_list')
+			div(class='list_item')
+				p NOMBRE DEL FICHERO AURORA_260914
+
+			
+
+	div(class='container_footer')
+		div(class='status')
+		div(class='button' id="mover_btn")
+			a(href='#') Mover
+	
+	div(class='loader')
+		div(class='spinner')
+			div(class="bounce1")
+			div(class="bounce2")
+			div(class="bounce3")
+
+block jss
+	script(type="text/javascript" src='javascripts/pass_ui.js')
+
