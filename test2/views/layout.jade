@@ -1,7 +1,12 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		
+		//css3-mediaqueries.js for IE less than 9 
+		//[if lt IE 9]><script src="./javascripts/css3-mediaqueries.js"></script><![endif]
+	body
+		block content
+		script(type="text/javascript" src="javascripts/jquery-1.11.3.min.js")
+		block jss
