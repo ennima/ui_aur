@@ -1,8 +1,8 @@
 import sys, time
 
-for i in range(0,5):
+for i in range(0,3):
   
-  if(i == 4):
+  if(i == 2):
   	print("listo")
   else:
   	print ("foo")

@@ -21,7 +21,7 @@ a {
 .container .left_list {
   background: #eee;
   width: 35%;
-  height: 15em;
+  height: 18em;
   float: left;
   margin-left: 1em;
   margin-top: 1em;
@@ -72,7 +72,7 @@ a {
 }
 .container .buttons {
   width: 9%;
-  height: 15em;
+  height: 18em;
   float: left;
   margin-top: 1em;
   margin-left: 8%;
@@ -126,7 +126,7 @@ a {
 .container .right_list {
   background: #eee;
   width: 35%;
-  height: 15em;
+  height: 18em;
   float: right;
   margin-right: 1em;
   margin-top: 1em;

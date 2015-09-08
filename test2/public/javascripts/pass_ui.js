@@ -1,4 +1,4 @@
-
+// Compatibilidad js con ie8
 if (!Array.prototype.indexOf)
 {
   Array.prototype.indexOf = function(elt /*, from*/)
@@ -37,7 +37,7 @@ var alertFallback = true;
 
 
 
-
+// app
 
 
 var left_list = [];
@@ -47,7 +47,7 @@ var right_list_tmp = [];
 
 $(document).ready(function(){
 	////console.log("Corriendo...");
-	
+	$(".loader").hide();
 
 });
 function llenaLista(lista,array,tmp_array){
@@ -182,5 +182,28 @@ $("#toLeft_btn").click(function(){
 
 $("#mover_btn").click(function(){
 	console.log("moviendo...");
-	console.log();
+	
+	$.ajax({
+	  method: "GET",
+	  url: "/users",
+	 // data: { name: "John", location: "Boston" },
+	  timeout:12000,
+	  beforeSend: function( ) {
+	    //xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+	    $(".loader").fadeIn("fast");
+	    console.log("before send...");
+	  },
+	  complete: function(data){
+	  	console.log("complete: ",data);
+	  },
+	  success: function(data){
+	  	console.log("success: ",data);
+	  }
+	})
+	  .done(function( data ) {
+	    if ( console && console.log ) {
+	      console.log( "Sample of data: "+ data );
+	      $(".loader").fadeOut("fast");
+	    }
+	  });
 });

@@ -20,4 +20,7 @@ router.get('/', function(req, res) {
 	});
 });
 
+router.get('/lista',function(req,res){
+
+});
 module.exports = router;
