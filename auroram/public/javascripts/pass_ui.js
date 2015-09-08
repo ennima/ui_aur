@@ -46,12 +46,12 @@ var right_list = [];
 var right_list_tmp = [];
 
 $(document).ready(function(){
-	//console.log("Corriendo...");
+	////console.log("Corriendo...");
 	
 
 });
 function llenaLista(lista,array,tmp_array){
-	console.log("###llenaLista");
+	//console.log("###llenaLista");
 	lista.html("");
 	/*array.forEach(function(entry){
 		
@@ -65,10 +65,10 @@ function llenaLista(lista,array,tmp_array){
 }
 left_list = ["UVA","PERA","MANZANA","PLATANO","SANDIA","MELON","PAPAYA"];
 left_list_tmp = llenaLista($(".left_list"), left_list);
-console.log("left_list: "+left_list);
+//console.log("left_list: "+left_list);
 left_list =[];
 refresh_events_lists();
-console.log("left_list_tmp: "+left_list_tmp);
+//console.log("left_list_tmp: "+left_list_tmp);
 /*left_list.forEach(function(entry){
 	//console.log(entry);
 	oldHtml = $(".left_list").html();
@@ -78,22 +78,22 @@ console.log("left_list_tmp: "+left_list_tmp);
 left_list = [];*/
 
 function refresh_events_lists(){
-	console.log("refresh events")
+	//console.log("refresh events")
 	$(".right_list .list_item").click(function(){
 		$(this).toggleClass('list_item_selected');
 		valor = $(this).text();
 		//console.log(valor);
 		if(right_list.indexOf(valor)!=-1){
-			console.log("Existe en: "+right_list.indexOf(valor));
+			//console.log("Existe en: "+right_list.indexOf(valor));
 			right_list.splice(right_list.indexOf(valor),1);
-			console.log("right_list: "+right_list);
+			//console.log("right_list: "+right_list);
 		}else{
-			console.log("Agrega");
+			//console.log("Agrega");
 			right_list.push(valor);
-			console.log("right_list: "+right_list);
+			//console.log("right_list: "+right_list);
 			right_list_tmp.splice(right_list_tmp.indexOf(valor),1);
-			console.log("right_list: "+right_list);
-			console.log("right_list_tmp: "+right_list_tmp);
+			//console.log("right_list: "+right_list);
+			//console.log("right_list_tmp: "+right_list_tmp);
 		}
 
 	});
@@ -101,18 +101,18 @@ function refresh_events_lists(){
 	$(".left_list .list_item").click(function(){
 		$(this).toggleClass('list_item_selected');
 		valor = $(this).text();
-		//console.log(valor);
+		////console.log(valor);
 		if(left_list.indexOf(valor)!=-1){
-			console.log("Existe en: "+left_list.indexOf(valor));
+			//console.log("Existe en: "+left_list.indexOf(valor));
 			left_list.splice(left_list.indexOf(valor),1);
-			console.log("left_list: "+left_list);
+			//console.log("left_list: "+left_list);
 		}else{
-			console.log("Agrega");
+			//console.log("Agrega");
 			left_list.push(valor);
-			console.log("left_list: "+left_list);
+			//console.log("left_list: "+left_list);
 			left_list_tmp.splice(left_list_tmp.indexOf(valor),1);
-			console.log("left_list: "+left_list);
-			console.log("left_list_tmp: "+left_list_tmp);
+			//console.log("left_list: "+left_list);
+			//console.log("left_list_tmp: "+left_list_tmp);
 		}
 
 	});
@@ -129,21 +129,21 @@ $("#toRight_btn").click(function(){
 		right_list_tmp = tmp_list;
 	}
 	if(left_list.length>0){
-		//console.log("Subir archivos a stratus");
+		////console.log("Subir archivos a stratus");
 		tmp_list = right_list_tmp.concat(left_list);
-		console.log("tmp_list: "+tmp_list);
+		//console.log("tmp_list: "+tmp_list);
 		right_list_tmp = tmp_list;
-		//console.log(right_list);
+		////console.log(right_list);
 		left_list = [];
 		
 		right_list_tmp = llenaLista($(".right_list"),right_list_tmp);
 		left_list_tmp = llenaLista($(".left_list"),left_list_tmp);
 		right_list = [];
 		refresh_events_lists();
-		console.log("right_list_tmp: ",right_list_tmp);
-		console.log("right_list: ", right_list);
-		console.log("left_list_tmp: ",left_list_tmp);
-		console.log("left_list: "+left_list);
+		//console.log("right_list_tmp: ",right_list_tmp);
+		//console.log("right_list: ", right_list);
+		//console.log("left_list_tmp: ",left_list_tmp);
+		//console.log("left_list: "+left_list);
 
 	}
 	
@@ -157,21 +157,21 @@ $("#toLeft_btn").click(function(){
 	}
 
 	if(right_list.length>0)
-	{//console.log("Subir archivos a stratus");
+	{////console.log("Subir archivos a stratus");
 		tmp_list = left_list_tmp.concat(right_list);
-		console.log("tmp_list: "+tmp_list);
+		//console.log("tmp_list: "+tmp_list);
 		left_list_tmp = tmp_list;
-		//console.log(right_list);
+		////console.log(right_list);
 		right_list = [];
 		
 		right_list_tmp = llenaLista($(".right_list"),right_list_tmp);
 		left_list_tmp = llenaLista($(".left_list"),left_list_tmp);
 		left_list = [];
 		refresh_events_lists();
-		console.log("right_list_tmp: ",right_list_tmp);
-		console.log("right_list: ", right_list);
-		console.log("left_list_tmp: ",left_list_tmp);
-		console.log("left_list: "+left_list);
+		//console.log("right_list_tmp: ",right_list_tmp);
+		//console.log("right_list: ", right_list);
+		//console.log("left_list_tmp: ",left_list_tmp);
+		//console.log("left_list: "+left_list);
 	}
 
 });
