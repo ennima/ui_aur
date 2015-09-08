@@ -44,10 +44,37 @@ var left_list = [];
 var left_list_tmp = [];
 var right_list = [];
 var right_list_tmp = [];
+$(document).load(function(){
 
+});
 $(document).ready(function(){
 	////console.log("Corriendo...");
-	$(".loader").hide();
+	//$(".loader").hide();
+	$.ajax({
+	  method: "GET",
+	  url: "/users/lista",
+	 // data: { name: "John", location: "Boston" },
+	  timeout:12000,
+	  beforeSend: function( ) {
+	    //xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+	    $(".loader").fadeIn("fast");
+	    console.log("before send...");
+	  },
+	  complete: function(data){
+	  	console.log("complete: ",data);
+	  },
+	  success: function(data){
+	  	console.log("success: ",data);
+	  }
+	})
+	  .done(function( data ) {
+	    if ( console && console.log ) {
+	      console.log( "Lista: "+ data );
+	      left_list_tmp = llenaLista($(".left_list"), data);
+	      refresh_events_lists();
+	      $(".loader").fadeOut("fast");
+	    }
+	  });
 
 });
 function llenaLista(lista,array,tmp_array){
@@ -67,7 +94,7 @@ left_list = ["UVA","PERA","MANZANA","PLATANO","SANDIA","MELON","PAPAYA"];
 left_list_tmp = llenaLista($(".left_list"), left_list);
 //console.log("left_list: "+left_list);
 left_list =[];
-refresh_events_lists();
+//refresh_events_lists();
 //console.log("left_list_tmp: "+left_list_tmp);
 /*left_list.forEach(function(entry){
 	//console.log(entry);
