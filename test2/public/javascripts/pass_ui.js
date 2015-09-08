@@ -213,7 +213,7 @@ $("#mover_btn").click(function(){
 	$.ajax({
 	  method: "GET",
 	  url: "/users",
-	 // data: { name: "John", location: "Boston" },
+	  data: { name: "John", location: "Boston",right_list_data:right_list_tmp },
 	  timeout:12000,
 	  beforeSend: function( ) {
 	    //xhr.overrideMimeType( "text/plain; charset=x-user-defined" );

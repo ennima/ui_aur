@@ -3,7 +3,7 @@ var router = express.Router();
 var pyPath = "C:\\Users\\ennima\\Documents\\soft\\aurotam\\test2\\";
 /* GET users listing. */
 router.get('/', function(req, res) {
-	
+	console.log(req.query.right_list_data);
 	var spawn = require('child_process').spawn;
 	var child = spawn('C:\\Python34\\python34.exe',[pyPath+'testShell.py']);
 
